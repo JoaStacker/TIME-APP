@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time-bar">
+        <div id="type-section">
+            <i class="btn material-icons" id="clock-icon">access_time</i>
+            <div id="type-card" class="hidden">
+                <div class="type-option" id="currentTime">
+                    <i class="material-icons">access_time</i>
+                    <h3>Time</h3>
+                </div>
+                <div class="type-option" id="pomodoro">
+                    <i class="material-icons">room_service</i>
+                    <h3>Pomodoro</h3>
+                </div>
+                <div class="type-option" id="stopwatch">
+                    <i class="material-icons">timer</i>
+                    <h3>Stopwatch</h3>
+                </div>
+                <div class="type-option" id="timer">
+                    <i class="material-icons">timelapse</i>
+                    <h3>Timer</h3>
+                </div>
+            </div>
+        </div>
+        
+        <time id="time"></time>
+
+        <div id="format-section">
+        </div>
+    </div>
+    <h1>
+        <span id="greeting"></span>
+        <span id="name" contenteditable="true"></span>
+    </h1>
+    <h2>What is your focus for today?</h2>
+    <h2 id="focus" contenteditable="true"></h2>
+    
+    <!-- JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

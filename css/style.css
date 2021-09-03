@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body features */
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black ;
+}
+
+
+/* General Buttons features (they are only two: #clock-icon and #control-icon)*/
+.btn{
+    font-size: 3vw;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{  
+    background-color: rgba(255, 255, 255, 0.227);
+}
+
+.toggle-btn{
+    font-size: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: gray;
+}
+
+
+
+/* -------------------------TIME BAR----------------------- */
+
+#time-bar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+    /* ------------TYPE SECTION------------ */
+        #type-section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #type-card{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color:white;
+            color: rgb(73, 73, 73);
+            font-size: 0.6em;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transform: translate(-40%, 100%);
+            transition: all 0.3s ease;
+            max-width: 30vw;
+        }
+
+        #type-card::before{
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            right: 5%;
+            top: -10px;
+            border-bottom: 10px solid rgb(255, 252, 252);
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: none;
+        }
+
+            .type-option{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                padding: 5px;
+                width: 80px;
+            }
+
+            .type-option:hover{
+                background-color: rgba(0, 0, 0, 0.103);
+            }
+    /*----------end of type section --------*/
+
+    /* -----------TIME SECTION ------------ */
+    time{
+        font-size: 5em;
+        font-weight: 900;
+        padding: 0 30px;
+        width: 55vw;
+        text-align: center;
+    }
+    /* ---------end of time section-------- */
+
+    /* --------CONTROLS SECTION------------ */
+    /* CURRENT TIME CONTROLS*/
+    #format-section{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+    }
+
+    #format24-card{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:white;
+        color: rgb(73, 73, 73);
+        font-size: 0.6em;
+        padding: 10px;
+        border-radius: 5px; 
+        margin-top: 10px;
+        transform: translate(30%, 100%); 
+        transition: all 0.3s ease;
+    }
+    
+    #format24-card::before{
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        background-color: transparent;
+        left: 10px;
+        top: -10px;
+        border-bottom: 10px solid rgb(255, 252, 252);
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: none;
+    }
+    /* end of current time controls */
+
+    /* POMODORO CONTROLS */
+    #new-pomodoro-btn{
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        font-size: 0.6em;
+        cursor: pointer;
+    }
+    /* end of pomodoro controls */
+    /* STOPWATCH CONTROLS */
+    #stop-icon{
+        position: absolute;
+        font-size: 1.5em;
+        transform: translate(200%);
+        animation-name: appears;
+        animation-duration: 0.2s;
+    }
+    /* -------end of controls section------- *-
+
+
+/* ------------------------USER INFO --------------------------- */
+
+h1{
+    margin-bottom: 25px;
+}
+
+#focus{
+    outline: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-bottom: 1px solid white;
+    min-width: 300px;
+    text-align: center;
+}
+
+#name{
+    outline: none;
+}
+
+h3{
+    font-size: 0.8em;
+}
+
+.toggle-on{
+    color: rgb(42, 207, 42);
+}
+
+.hidden{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.visible{
+    opacity: 1;
+    pointer-events: all;
+}
+
+#pomodoro-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.596);
+    z-index: 3;
+    transition: all 0.3s ease;
+    animation-name: appears;
+    animation-duration: 0.5s;
+}
+
+#pomodoro-menu{
+    position: absolute;
+    background-color: white; 
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: black;
+    border-radius: 20px;
+    min-width: 500px;
+    z-index: 4;
+    animation-name: appears;
+    animation-duration: 0.5s;
+    box-shadow: 0 0 300px 30px rgba(255, 255, 255, 0.322);
+}
+
+
+@keyframes appears {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.pomodoro-title{
+    width: 100%;
+    text-align: center;
+}
+
+.input-field{
+    font-size: 1em;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgba(177, 175, 175, 0.219);
+    margin: 10px 0px;
+    width: 100px;
+    text-align: center;
+}
+
+#pomodoro-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pomodoro-description{
+    color: gray;
+    font-size: 0.8em;
+}
+
+#start-btn{
+    padding: 20px;
+    background-color: rgb(237, 81, 81);
+    color: white;
+    font-size: 1em;
+    align-self: center;
+    border: none;
+    outline: none;
+    left: auto;
+    right: auto;
+    margin: 20px auto 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+#start-btn:hover{
+    box-shadow: 0 0 10px 5px rgb(238, 171, 171);
+}
+
+.disabled{
+    pointer-events: none;
+}
+
+.unit{
+    border: none;
+    outline: none;
+}
